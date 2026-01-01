@@ -1,3 +1,45 @@
+# =============================================
+# ACE Parking Developer Assessment
+# Combined .gitignore for Node.js and .NET/C#
+# =============================================
+
+# ----- OS Generated -----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ----- IDE / Editor -----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# ----- .NET / C# -----
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.csproj.user
+appsettings.Development.json
+appsettings.Local.json
+*.dll
+*.exe
+*.pdb
+
+# =============================================
+# Node.js (original template below)
+# =============================================
+
 # Logs
 logs
 *.log
