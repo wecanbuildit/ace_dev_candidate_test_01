@@ -134,13 +134,15 @@ Your API responses **must match** the field names shown in these examples exactl
 
 ## Reference API
 
-A live reference API is available for you to explore the expected behavior:
+A live reference API is available for you to explore the **expected behavior**:
 
 **Base URL**: `https://candidateinvoice-bcc4a5djcrbthwep.westus3-01.azurewebsites.net`
 
 **API Key**: `DE7405BBC91A42319C6820C48B8DCE51`
 
 Use the included Postman collection ([`Ace-Recruiting-Test-Example.postman_collection.json`](Ace-Recruiting-Test-Example.postman_collection.json)) to explore all endpoints.
+
+> **Note**: The reference API is provided for **behavior comparison only** - to see what responses should look like. Your implementation should be your own work.
 
 ### Quick Test
 
@@ -163,13 +165,14 @@ curl -H "x-api-key: DE7405BBC91A42319C6820C48B8DCE51" \
    ```
    your-repo/
    ├── database/
-   │   ├── schema.sql        # Your table definitions
-   │   ├── seed-data.sql     # Sample data (can use ours or your own)
+   │   ├── init.sql          # Schema + seed data (idempotent - safe to run multiple times)
    │   └── stored-procs.sql  # Stored procedures (if used)
    ├── src/                  # Your API source code
    ├── README.md             # Setup and run instructions
    └── ...
    ```
+
+   > **Tip**: Make your SQL scripts **idempotent** (use `IF NOT EXISTS` guards) so they can be run multiple times without errors.
 
 3. **Your README should include**:
    - How to set up the database
@@ -193,6 +196,44 @@ We will evaluate your submission on:
 | **Code Quality** | Clean, readable code that follows conventions for your chosen platform |
 | **Error Handling** | Graceful handling of invalid inputs, missing data, and edge cases |
 | **Documentation** | Clear setup instructions and any design decisions explained |
+
+---
+
+## Success Criteria
+
+Your submission must meet these requirements to pass:
+
+| Requirement | Details |
+|-------------|---------|
+| **Auth works** | All endpoints except `/api/public/hello` require `x-api-key` header |
+| **JSON is camelCase** | Response field names match the examples exactly |
+| **Seed data loads** | The 2 customers and 4 products from `seed-data.sql` are in your database |
+| **Endpoints match examples** | Response shapes match what's in the `examples/` folder |
+| **API runs** | We can start your API and hit all endpoints successfully |
+
+---
+
+## Smoke Test (Verify Your Solution)
+
+After starting your API, run these quick checks:
+
+```bash
+# 1. Health check (should return 200)
+curl http://localhost:5001/api/public/hello
+
+# 2. Get products with auth (should return 4 products)
+curl -H "x-api-key: YOUR_API_KEY" http://localhost:5001/api/product/viewall
+
+# 3. Auth required (should return 401)
+curl http://localhost:5001/api/product/viewall
+```
+
+If using the provided Docker setup:
+```bash
+cd docker
+docker compose up -d
+# Wait 30-60 seconds for SQL Server to initialize, then test
+```
 
 ---
 
