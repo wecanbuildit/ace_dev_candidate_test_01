@@ -1,6 +1,8 @@
 # SQL Server Setup Guide
 
-This guide covers how to set up a local SQL Server instance for the ACE Parking developer assessment. Choose the option that best fits your development environment.
+This guide covers how to set up a local SQL Server instance for the ACE Parking developer assessment.
+
+> **Pick one option below and skip the others.** Choose based on your operating system and preference.
 
 ---
 
@@ -21,6 +23,8 @@ This is the **fastest and easiest** way to get started on macOS or Linux. We pro
 
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+
+> **Note**: SQL Server in Docker typically starts in 30-60 seconds. If it fails to start, check that your password meets complexity requirements (8+ chars, uppercase, lowercase, number, special character).
 
 ### Quick Start
 

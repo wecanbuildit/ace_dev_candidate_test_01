@@ -201,7 +201,7 @@ We will evaluate your submission on:
 
 ## Success Criteria
 
-Your submission must meet these requirements to pass:
+Here's what we'll check when reviewing your submission:
 
 | Requirement | Details |
 |-------------|---------|
@@ -239,6 +239,6 @@ docker compose up -d
 
 ## Questions?
 
-If you have questions about the requirements, please reach out to your ACE Parking contact. We're happy to clarify anything that's unclear.
+If you have questions about the requirements or get stuck, please reach out to your ACE Parking contact. We're happy to clarify anything that's unclear.
 
 Good luck!

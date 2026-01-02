@@ -2,6 +2,8 @@
 
 This folder contains a Docker Compose configuration to quickly set up SQL Server for local development.
 
+> **Windows users**: The commands below use bash syntax. If using PowerShell, environment variable syntax differs (e.g., `$env:SA_PASSWORD="..."` instead of `SA_PASSWORD=...`).
+
 ## Quick Start
 
 ### 1. Create your database initialization script
@@ -44,9 +46,11 @@ This will:
 # Check containers are running
 docker compose ps
 
-# View initialization logs
+# View initialization logs (check here if database isn't set up correctly)
 docker compose logs db-init
 ```
+
+> **Tip**: If something isn't working, always check the logs first. Most issues are visible in `docker compose logs db-init` or `docker compose logs sqlserver`.
 
 ### 4. Connect to the database
 
@@ -65,6 +69,8 @@ Once your API is ready, uncomment the appropriate section in `docker-compose.yml
 
 - **C#/.NET**: Uncomment "OPTION A" and adjust the Dockerfile path
 - **Node.js**: Uncomment "OPTION B" and adjust as needed
+
+> **Important**: Only uncomment ONE option (A or B), not both.
 
 Then run:
 
