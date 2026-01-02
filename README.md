@@ -159,7 +159,7 @@ curl -H "x-api-key: DE7405BBC91A42319C6820C48B8DCE51" \
 
 ## Submission Instructions
 
-1. **Create a public GitHub repository** with your solution
+1. **Create a new public GitHub repository** with your solution (do not fork this repo)
 
 2. **Repository structure** should include:
    ```
