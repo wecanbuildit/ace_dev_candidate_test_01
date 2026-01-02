@@ -111,13 +111,24 @@ Choose ONE platform:
 - Express, Fastify, or similar framework
 - Use the `mssql` package for SQL Server connectivity
 
-### Request/Response Examples
+### Request/Response Format
+
+**Important**: All JSON property names must use **camelCase** (e.g., `customerId`, `productName`, `invoiceDate`).
+
+> **Note for C#/.NET developers**: .NET defaults to PascalCase JSON serialization. You must configure your serializer to use camelCase. Example:
+> ```csharp
+> builder.Services.ConfigureHttpJsonOptions(options => {
+>     options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+> });
+> ```
 
 See the [`examples/`](examples/) folder for JSON samples:
 - [`post-order-request.json`](examples/post-order-request.json) - Creating a new order
 - [`get-order-response.json`](examples/get-order-response.json) - Order details response
 - [`get-customers-response.json`](examples/get-customers-response.json) - Customer list response
 - [`get-products-response.json`](examples/get-products-response.json) - Product list response
+
+Your API responses **must match** the field names shown in these examples exactly.
 
 ---
 
@@ -178,6 +189,7 @@ We will evaluate your submission on:
 |----------|----------------------|
 | **SQL Design** | Proper normalization, appropriate data types, constraints, foreign keys, indexes where appropriate |
 | **API Functionality** | All endpoints work correctly and return proper response formats |
+| **JSON Format** | Responses use camelCase property names matching the examples exactly |
 | **Code Quality** | Clean, readable code that follows conventions for your chosen platform |
 | **Error Handling** | Graceful handling of invalid inputs, missing data, and edge cases |
 | **Documentation** | Clear setup instructions and any design decisions explained |
