@@ -39,10 +39,7 @@ This is your chance to demonstrate your Microsoft SQL Server skills. Think about
 ### Requirements
 
 1. Create table DDL to store the data necessary for an invoice system:
-   - **Customers** - Company information and contact details
-   - **Products** - Items that can be ordered with pricing
-   - **Orders** - Invoice header information
-   - **Order Details/Line Items** - Individual products within an order
+   - You are free to use data types and table structures you feel are appropriate.
 
 2. Consider:
    - What happens if someone tries to order a product that doesn't exist?
