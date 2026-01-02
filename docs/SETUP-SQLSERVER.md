@@ -33,7 +33,7 @@ This is the **fastest and easiest** way to get started on macOS or Linux. We pro
    cd docker
    ```
 
-2. **Create your init.sql file** with your schema and seed data (see `database/seed-data.sql` for reference)
+2. **Create your init.sql file** with your schema and any seed data you need for testing
 
 3. **Start SQL Server:**
    ```bash
@@ -95,7 +95,7 @@ This is the traditional approach for Windows developers familiar with Microsoft 
 ### Create Your Database
 1. Right-click "Databases" > "New Database"
 2. Name it `AceInvoice` (or your preferred name)
-3. Create your tables and run the seed data script
+3. Create your tables and add any seed data you need for testing
 
 ### Export Your Schema (for submission)
 1. Right-click your database > "Tasks" > "Generate Scripts"
@@ -202,6 +202,6 @@ const config = {
 ## Next Steps
 
 Once connected:
-1. Create your database schema (Customers, Products, Orders, OrderDetails tables)
-2. Run the `database/seed-data.sql` script to populate test data
-3. Test your queries before building the API
+1. Create your database schema to support customers, products, orders, and line items.
+2. Add a bit of seed data so you can exercise your endpoints.
+3. Test your queries before building the API.

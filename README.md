@@ -60,12 +60,6 @@ This is your chance to demonstrate your Microsoft SQL Server skills. Think about
 
 > **Tip**: If using SSMS, you can use "Generate Scripts" to export your schema and data.
 
-### Reference Data
-
-See [`database/seed-data.sql`](database/seed-data.sql) for sample customer and product data to use in your testing. Your schema should accommodate this data structure.
-
----
-
 ## Part 2: REST API Implementation
 
 Build a REST API that connects to your SQL Server database and exposes the following endpoints.
@@ -207,7 +201,7 @@ Here's what we'll check when reviewing your submission:
 |-------------|---------|
 | **Auth works** | All endpoints except `/api/public/hello` require `x-api-key` header |
 | **JSON is camelCase** | Response field names match the examples exactly |
-| **Seed data loads** | The 2 customers and 4 products from `seed-data.sql` are in your database |
+| **Data present** | Database contains enough sample data to exercise all endpoints |
 | **Endpoints match examples** | Response shapes match what's in the `examples/` folder |
 | **API runs** | We can start your API and hit all endpoints successfully |
 
@@ -221,7 +215,7 @@ After starting your API, run these quick checks:
 # 1. Health check (should return 200)
 curl http://localhost:5001/api/public/hello
 
-# 2. Get products with auth (should return 4 products)
+# 2. Get products with auth (should return your seeded products)
 curl -H "x-api-key: YOUR_API_KEY" http://localhost:5001/api/product/viewall
 
 # 3. Auth required (should return 401)

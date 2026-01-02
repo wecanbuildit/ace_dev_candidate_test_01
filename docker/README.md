@@ -8,7 +8,7 @@ This folder contains a Docker Compose configuration to quickly set up SQL Server
 
 ### 1. Create your database initialization script
 
-Create a file called `init.sql` in this folder with your schema and seed data:
+Create a file called `init.sql` in this folder with your schema and any seed data you need for testing:
 
 ```sql
 -- Create database
@@ -19,15 +19,11 @@ USE AceInvoice;
 GO
 
 -- Create your tables here...
-CREATE TABLE Customers (
-    -- your schema
-);
+-- (define the structures you need for customers, products, orders, etc.)
 
 -- Add seed data...
-INSERT INTO Customers (...) VALUES (...);
+-- INSERT INTO ... VALUES (...);
 ```
-
-> **Tip**: You can combine your schema DDL with the seed data from `../database/seed-data.sql`
 
 ### 2. Start SQL Server
 
