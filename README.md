@@ -28,7 +28,7 @@ Before you begin, ensure you have:
   - **C#/.NET**: Visual Studio 2022+ with .NET 9+
   - **Node.js**: Node.js 18+ with npm/yarn
 - **Postman** (optional but recommended) - [Download here](https://www.postman.com/)
-- **Git** - For version control and submission
+- **GitHub** - For version control and submission
 
 ---
 
@@ -38,8 +38,7 @@ This is your chance to demonstrate your Microsoft SQL Server skills. Think about
 
 ### Requirements
 
-1. Create table DDL to store the data necessary for an invoice system:
-   - You are free to use data types and table structures you feel are appropriate.
+1. Design a database schema to support the invoice system using the table structures and data types you think are appropriate.
 
 2. Consider:
    - What happens if someone tries to order a product that doesn't exist?
